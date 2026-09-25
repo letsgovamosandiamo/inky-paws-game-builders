@@ -36,11 +36,11 @@
     const thumbnail = doc.querySelector('.available img');
     assert(thumbnail.complete && thumbnail.naturalWidth > 0, 'Thumbnail missing');
   });
-  await test('Two active builders; all future cards are disabled', () => {
+  await test('Three active builders; all future cards are disabled', () => {
     const doc = frame.contentDocument;
-    assert(doc.querySelectorAll('.open-builder').length === 2);
+    assert(doc.querySelectorAll('.open-builder').length === 3);
     const placeholders = [...doc.querySelectorAll('.coming-soon')];
-    assert(placeholders.length === 2);
+    assert(placeholders.length === 1);
     assert(placeholders.every(card => !card.querySelector('a') && card.querySelector('button').disabled), 'Placeholder has an active destination');
   });
   await test('Open Builder reaches the nested builder and its resources load', async () => {
@@ -75,6 +75,13 @@
     assert(doc.getElementById('preview-frame').srcdoc.includes('slot-game'));
     await navigate(() => doc.querySelector('.gallery-link').click());
     assert(frame.contentWindow.location.href === galleryURL);
+  });
+  await test('Board Game Fight card uses its directory link and preserves the final placeholder', () => {
+    const doc=frame.contentDocument, card=doc.querySelector('[aria-labelledby="board-title"]');
+    assert(card.querySelector('.card-number').textContent === 'BUILDER 03');
+    assert(card.querySelector('h3').textContent === 'Board Game Fight');
+    assert(card.querySelector('.open-builder').getAttribute('href') === 'builders/board-game-fight/');
+    assert(doc.querySelector('#future-three-title'), 'Remaining placeholder missing');
   });
   await test('Gallery fits a phone viewport', async () => {
     frame.style.width = '390px';
