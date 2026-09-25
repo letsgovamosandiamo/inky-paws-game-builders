@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flying Quiz Builder · Inky Paws</title>
+  <link rel="stylesheet" href="css/builder.css">
+  <script defer src="js/flying-quiz/project.js"></script>
+  <script defer src="js/shared/assets.js"></script>
+  <script defer src="js/shared/project-io.js"></script>
+  <script defer src="js/flying-quiz/game-styles.js"></script>
+  <script defer src="js/flying-quiz/game-runtime.js"></script>
+  <script defer src="js/flying-quiz/game-template.js"></script>
+  <script defer src="js/shared/export.js"></script>
+  <script defer src="js/shared/preview.js"></script>
+  <script defer src="js/flying-quiz/question-cards.js"></script>
+  <script defer src="js/flying-quiz/editor.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">✦</span><span>Inky Paws<small>GAME BUILDERS</small></span></a>
+    <div class="project-heading"><span class="eyebrow">BUILDER 01</span><h1>Flying Quiz Builder</h1></div>
+    <a class="gallery-link" href="../../index.html">← All Game Builders</a>
+    <div class="file-actions"><button id="save-project">Save project</button><button id="load-project">Load project</button><input id="project-file" type="file" accept=".json,application/json" hidden></div>
+  </header>
+  <main class="workspace">
+    <section class="editor" aria-label="Game editor">
+      <nav class="tabs" aria-label="Editor sections"><button class="active" data-tab="questions" aria-pressed="true">Questions <span id="question-count">3</span></button><button data-tab="settings" aria-pressed="false">Game settings</button><button data-tab="assets" aria-pressed="false">Images & sound</button></nav>
+      <div class="editor-body">
+        <section id="panel-questions"><div class="section-heading"><div><span class="eyebrow">BUILD YOUR QUIZ</span><h2>A little learning. A little flight.</h2></div></div><p class="muted">Answer a question, collect a star, and fly onward. Start with these examples or make them your own.</p><div id="question-cards"></div><button id="add-question" class="add-button">+ Add Question</button></section>
+        <section id="panel-settings" hidden><h2>Make the game yours</h2><p class="muted">Set the pace, the words, and the look.</p><div id="settings-fields"></div></section>
+        <section id="panel-assets" hidden><h2>Images & sound</h2><p class="muted">Everything here is optional. Upload files to include them in your game, or use web URLs. Linked media needs an internet connection.</p><div id="asset-fields"></div></section>
+      </div>
+      <footer class="editor-footer"><span id="project-state">Ready to edit</span><span>Save JSON to keep an editable copy</span></footer>
+    </section>
+    <section class="preview-panel" aria-label="Game preview">
+      <div class="preview-heading"><div><span class="eyebrow">TRY IT AS YOU BUILD</span><h2>Live preview</h2></div><div class="preview-tools"><button id="restart-preview" title="Restart preview">↻ Reset</button><button id="popout">Pop out ↗</button><button id="fullscreen">Fullscreen ⛶</button></div></div>
+      <div class="preview-options"><label>Preview size <select id="preview-size"><option value="desktop">Desktop</option><option value="phone">Phone</option></select></label><span id="preview-state">Changes restart the preview</span></div>
+      <div id="preview-shell" class="preview-shell"><iframe id="preview-frame" title="Flying quiz live preview" sandbox="allow-scripts" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+      <div id="validation" class="validation" hidden></div>
+      <div class="export-box"><div><h2>Ready for takeoff?</h2><p>Download a playable game or embed it in your lesson.</p></div><div class="export-actions"><button id="copy-embed">Copy iframe</button><button id="download-game" class="primary">Download HTML ↓</button></div></div>
+      <details class="embed-details"><summary>View iframe embed code</summary><p class="muted">Paste into a platform that supports iframe <code>srcdoc</code>. Uploaded media is included, so large files make longer embed code.</p><textarea id="embed-code" aria-label="Iframe embed code" readonly spellcheck="false"></textarea></details>
+    </section>
+  </main>
+  <div id="status" class="toast" role="status" aria-live="polite" hidden></div>
+  <noscript>This builder needs JavaScript enabled in your browser.</noscript>
+</body>
+</html>

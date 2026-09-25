@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="300" viewBox="0 0 720 300" fill="none">
+  <defs><linearGradient id="sky" x2="0" y2="300" gradientUnits="userSpaceOnUse"><stop stop-color="#D5E9DD"/><stop offset="1" stop-color="#F0EFCF"/></linearGradient></defs>
+  <path fill="url(#sky)" d="M0 0h720v300H0z"/>
+  <ellipse cx="115" cy="128" rx="87" ry="22" fill="#FFFDF2" fill-opacity=".75"/>
+  <ellipse cx="580" cy="57" rx="110" ry="26" fill="#FFFDF2" fill-opacity=".65"/>
+  <ellipse cx="505" cy="202" rx="58" ry="16" fill="#FFFDF2" fill-opacity=".55"/>
+  <ellipse cx="90" cy="350" rx="220" ry="93" fill="#BDD0AA" fill-opacity=".55"/>
+  <ellipse cx="610" cy="343" rx="260" ry="101" fill="#ABC7A6" fill-opacity=".4"/>
+  <path d="M388 179Q465 78 618 120" stroke="#A6BFA0" stroke-width="2" stroke-dasharray="5 9" stroke-linecap="round"/>
+  <g fill="#D5A34E" stroke="#FFF6D8" stroke-width="3" stroke-linejoin="round">
+    <path d="m453 115 5 12 13 1-10 9 3 13-11-7-11 7 3-13-10-9 13-1z"/>
+    <path d="m534 83 6 15 16 2-12 11 3 16-13-8-14 8 4-16-12-11 16-2z"/>
+    <path d="m617 105 5 12 13 1-10 9 3 13-11-7-11 7 3-13-10-9 13-1z"/>
+  </g>
+  <g transform="translate(164 48) scale(1.05)">
+    <ellipse cx="132" cy="156" rx="100" ry="14" fill="#315F57" opacity=".12"/>
+    <path d="M30 135Q128 165 235 124L214 149Q126 184 42 153Z" fill="#D99748"/>
+    <path d="M39 135Q130 155 229 125" stroke="#FFF1BD" stroke-width="7"/>
+    <path d="M182 118Q229 102 210 71" stroke="#536E69" stroke-width="14" stroke-linecap="round"/>
+    <ellipse cx="132" cy="113" rx="55" ry="34" fill="#536E69"/>
+    <path d="m72 63-4-44 33 24q20-7 39 2l30-23-4 48q19 55-44 58Q58 126 72 63" fill="#536E69"/>
+    <path d="m77 32 4 27 15-12Zm81 4-14 13 15 11Z" fill="#E5B99F"/>
+    <ellipse cx="105" cy="81" rx="7" ry="10" fill="#FFF7D7"/><ellipse cx="146" cy="81" rx="7" ry="10" fill="#FFF7D7"/>
+    <circle cx="107" cy="82" r="4" fill="#263F3A"/><circle cx="144" cy="82" r="4" fill="#263F3A"/>
+    <path d="m119 96 12 0-6 6Z" fill="#F0BEAF"/>
+    <path d="M125 102q-8 12-15 3m15-3q7 12 15 3" stroke="#263F3A" stroke-width="3" stroke-linecap="round"/>
+    <path d="m71 91-23-6m23 16-24 3m128-13 22-6m-22 16 23 4" stroke="#536E69" stroke-width="3" stroke-linecap="round"/>
+    <path d="m160 119 22 10-11 13-22-15Z" fill="#EDCF7A"/>
+  </g>
+</svg>
