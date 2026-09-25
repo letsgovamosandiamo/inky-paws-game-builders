@@ -36,11 +36,11 @@
     const thumbnail = doc.querySelector('.available img');
     assert(thumbnail.complete && thumbnail.naturalWidth > 0, 'Thumbnail missing');
   });
-  await test('Only one active builder; all future cards are disabled', () => {
+  await test('Two active builders; all future cards are disabled', () => {
     const doc = frame.contentDocument;
-    assert(doc.querySelectorAll('.open-builder').length === 1);
+    assert(doc.querySelectorAll('.open-builder').length === 2);
     const placeholders = [...doc.querySelectorAll('.coming-soon')];
-    assert(placeholders.length === 3);
+    assert(placeholders.length === 2);
     assert(placeholders.every(card => !card.querySelector('a') && card.querySelector('button').disabled), 'Placeholder has an active destination');
   });
   await test('Open Builder reaches the nested builder and its resources load', async () => {
@@ -64,6 +64,16 @@
   });
   await test('Brand also returns to the gallery', async () => {
     await navigate(() => frame.contentDocument.querySelector('.brand').click());
+    assert(frame.contentWindow.location.href === galleryURL);
+  });
+  await test('Slot Machine opens independently and returns to the gallery', async () => {
+    await navigate(() => frame.contentDocument.querySelector('[href="builders/slot-machine/index.html"]').click());
+    const doc=frame.contentDocument;
+    assert(frame.contentWindow.InkySlot.Export, 'Slot scripts missing');
+    assert(doc.querySelector('link[rel="stylesheet"]').sheet.cssRules.length > 0);
+    assert(doc.querySelectorAll('.question-card').length === 9);
+    assert(doc.getElementById('preview-frame').srcdoc.includes('slot-game'));
+    await navigate(() => doc.querySelector('.gallery-link').click());
     assert(frame.contentWindow.location.href === galleryURL);
   });
   await test('Gallery fits a phone viewport', async () => {

@@ -1,6 +1,6 @@
 # Inky Paws Game Builders
 
-Open `index.html` in a modern browser to see the **Inky Paws Game Builders gallery**. Choose **Open Builder** on Flying Quiz Builder, then use **← All Game Builders** to return. Flying Quiz is the only active builder; the three Coming Soon cards are disabled placeholders without destinations.
+Open `index.html` in a modern browser to see the **Inky Paws Game Builders gallery**. Choose **Open Builder** on Flying Quiz Builder, then use **← All Game Builders** to return. Flying Quiz and Slot Machine are independent active builders; two Coming Soon cards remain disabled placeholders.
 
 No installation, backend, build step, or server is needed. The same folder can be hosted on GitHub Pages or another static website host.
 
@@ -104,4 +104,13 @@ Changed in place:
 - `assets/inky-paws/README.md`: updated the runtime path.
 - `README.md`: gallery usage, static hosting, folder structure, and this manifest.
 
-No game logic, project format, media processing, preview, or export JavaScript was changed. No second builder was created.
+No game logic, project format, media processing, preview, or export JavaScript was changed. This manifest records the earlier gallery restructuring. Slot Machine was added separately afterward.
+
+
+## Slot Machine (Builder 02)
+
+Open `builders/slot-machine/index.html`, or choose its gallery card. See [Slot Machine documentation](builders/slot-machine/README.md) for gameplay, local media, and export details. Its HTML, CSS, JavaScript, and optional bundled math renderer live entirely in that folder; Flying Quiz files are unchanged.
+
+For Genially: download the finished Slot Machine HTML, upload that file to your GitHub Pages repository (for example under `games/`), then enter its public HTTPS `.html` URL in the builder and copy the iframe. The embedded document is the finished game only. Copying iframe code does not upload or publish a file. Replace the hosted HTML after editing a game.
+
+Additional checks: `tests/slot-machine.test.html` exercises data, exports and gameplay. `tests/slot-interface.test.html` exercises the new editor.

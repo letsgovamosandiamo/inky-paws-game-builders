@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Slot Machine · Inky Paws Game Builders</title>
+  <link rel="stylesheet" href="css/builder.css">
+  <script defer src="js/project.js"></script>
+  <script defer src="js/art.js"></script>
+  <script defer src="js/media.js"></script>
+  <script defer src="js/game-styles.js"></script>
+  <script defer src="js/game-runtime.js"></script>
+  <script defer src="vendor/mathjax-source.js"></script>
+  <script defer src="js/export.js"></script>
+  <script defer src="js/editor.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">✦</span><span>Inky Paws<small>GAME BUILDERS</small></span></a>
+    <div class="project-heading"><span class="eyebrow">BUILDER 02</span><h1>Slot Machine</h1></div>
+    <a class="gallery-link" href="../../index.html">← All Game Builders</a>
+    <div class="file-actions"><button id="save-project">Save project</button><button id="load-project">Load project</button><input id="project-file" type="file" accept=".json,application/json" hidden></div>
+  </header>
+  <main class="workspace">
+    <section class="editor" aria-label="Slot Machine editor">
+      <nav class="tabs" aria-label="Editor sections"><button data-tab="questions" class="active" aria-pressed="true">Questions <span id="question-count">9 / 9</span></button><button data-tab="toys" aria-pressed="false">Toy cabinet</button><button data-tab="settings" aria-pressed="false">Game settings</button></nav>
+      <div class="editor-body">
+        <section id="panel-questions"><span class="eyebrow">NINE CHANCES TO COLLECT</span><h2>A good answer. A little prize.</h2><p class="muted">Insert a coin, choose a column, and grab a toy. Each attempt uses the next question—even after a wrong answer.</p><div class="question-toolbar"><button id="add-question">+ Add Question</button><button id="import-questions">Import questions</button><button id="clear-questions">Clear questions</button></div><div id="question-cards"></div><p class="muted">Exactly 9 questions make a complete game. Each choice question can accept more than one option; the learner picks one.</p></section>
+        <section id="panel-toys" hidden><h2>Your prize cabinet</h2><p class="muted">Pick a toy to customize. Use your own image or keep the built-in artwork. Drag it inside its cell to reposition, or use the sliders.</p><div id="toy-grid" class="toy-grid"></div><div id="toy-editor"></div><button id="reset-toys">Reset all toys</button></section>
+        <section id="panel-settings" hidden><h2>Make it yours</h2><p class="muted">Set the words and machine style. Question images, audio, fonts, and timers live inside each question card.</p><div id="settings-fields"></div><button id="reset-project" class="danger">Reset editor to examples</button></section>
+      </div>
+      <footer class="editor-footer"><span id="project-state">Ready to edit</span><span>Save JSON to keep your editable project</span></footer>
+    </section>
+    <section class="preview-panel" aria-label="Game preview">
+      <div class="preview-heading"><div><span class="eyebrow">TRY IT AS YOU BUILD</span><h2>Live preview</h2></div><div class="preview-tools"><button id="restart-preview">↻ Reset preview</button><button id="popout">Pop out ↗</button><button id="fullscreen">Fullscreen ⛶</button></div></div>
+      <div class="preview-options"><label>Preview size <select id="preview-size"><option value="desktop">Desktop</option><option value="phone">Phone</option></select></label><span id="preview-state">Edits restart the game</span></div>
+      <div id="preview-shell" class="preview-shell"><iframe id="preview-frame" title="Slot Machine live preview" sandbox="allow-scripts" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+      <div id="validation" class="validation" hidden></div>
+      <div class="export-box"><div><h2>A game to take with you</h2><p>Uploaded images and audio travel with the finished game.</p></div><button id="download-game" class="primary">Download HTML ↓</button></div>
+      <section class="hosted-embed" aria-labelledby="embed-heading"><h2 id="embed-heading">Embed your hosted game</h2><ol><li>Download the game HTML above.</li><li>Upload that HTML to your GitHub Pages site, for example in a <code>games/</code> folder.</li><li>Paste its public HTTPS URL below and copy the iframe into Genially.</li></ol><label class="field">Published game HTML URL<input id="hosted-url" type="url" placeholder="https://your-site.example/games/my-game.html" autocomplete="off"></label><p class="muted">Use the finished game URL, not the builder. After edits, upload the latest HTML to that URL. Copying does not publish or upload your game.</p><button id="copy-iframe">Copy iframe</button><details id="embed-details"><summary>View iframe code</summary><textarea id="embed-code" readonly aria-label="Game iframe code" spellcheck="false"></textarea></details></section>
+    </section>
+  </main>
+  <dialog id="import-dialog"><form method="dialog"><div class="dialog-heading"><h2>Import questions</h2><button value="cancel" aria-label="Close import">×</button></div><p>One question per line. Imported questions are added after your existing cards, up to 9 total.</p><pre>Question | accepted answer / alternative
+Question | option | *correct option | option</pre><label class="field">Questions to import<textarea id="import-text" rows="9" spellcheck="false"></textarea></label><p class="muted">Mark each acceptable choice with *. Without a mark, the first option is correct.</p><button id="confirm-import" type="button" class="primary">Add imported questions</button></form></dialog>
+  <div id="status" class="toast" role="status" aria-live="polite" hidden></div>
+  <noscript>Enable JavaScript to use this builder.</noscript>
+</body>
+</html>
